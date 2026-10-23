@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Activar Tablerix Pro</title>
+<style>
+:root{
+  --bg:#15191c;--bg2:#1b2024;--card:#20262b;--line:#323a41;--ink:#eef0f1;--muted:#a3adb5;
+  --accent:#f0a826;--accent-ink:#1e1400;--brand:#e8652e;--edu:#4fb3e8;color-scheme:dark;
+  --sans:"Barlow","Segoe UI",system-ui,sans-serif;--cond:"Barlow Condensed","Arial Narrow","Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--sans)}
+img,video{max-width:100%;height:auto;display:block}
+a{color:var(--accent)}
+.wrap{max-width:1160px;margin:0 auto;padding-inline:20px}
+h1,h2,h3{font-family:var(--cond);font-weight:700;line-height:1.08;text-wrap:balance;margin:0}
+h2{font-size:clamp(30px,4vw,44px)}
+h3{font-size:22px;letter-spacing:.01em}
+.eyebrow{font:600 13px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 12px}
+.muted{color:var(--muted)}
+
+/* barra superior */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(21,25,28,.88);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:20px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
+.brand img{width:34px;height:34px}
+.brand b{font:800 26px/1 var(--sans);letter-spacing:-.01em}.brand b em{font-style:normal;color:var(--accent)}
+.nav{display:flex;gap:22px;margin-left:auto}
+.nav a{color:var(--muted);text-decoration:none;font-weight:500}.nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 16px var(--sans);padding:12px 20px;border-radius:9px;text-decoration:none;border:1px solid transparent;cursor:pointer}
+.btn.pri{background:var(--accent);color:var(--accent-ink)}.btn.pri:hover{filter:brightness(1.07)}
+.btn.sec{border-color:var(--line);color:var(--ink);background:transparent}.btn.sec:hover{border-color:var(--muted)}
+.top .btn{padding:9px 16px;font-size:15px}
+@media (max-width:820px){.nav{display:none}.top .btn{margin-left:auto}}
+@media (max-width:480px){.top .long{display:none}.top .btn{padding:8px 12px}}
+
+/* portada */
+.hero{padding-block:72px 40px;background:radial-gradient(1200px 500px at 70% -10%,rgba(240,168,38,.13),transparent 60%)}
+.hero .wrap{display:grid;grid-template-columns:1fr 1.25fr;gap:48px;align-items:center}
+.hero h1{font-size:clamp(40px,6vw,68px)}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero p.lead{font-size:20px;color:var(--muted);margin:18px 0 26px;max-width:34ch}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.beta{display:inline-flex;align-items:center;gap:10px;border:1.5px solid var(--accent);border-radius:10px;padding:6px 12px 6px 6px;margin-bottom:22px;font:600 15px var(--sans)}
+.beta span{background:var(--accent);color:var(--accent-ink);font:700 14px/1 var(--cond);letter-spacing:.06em;padding:6px 8px;border-radius:6px}
+.shot{border-radius:12px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 60px rgba(0,0,0,.45);background:var(--bg2)}
+.facts{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:30px;color:var(--muted);font-size:15px}
+.facts b{color:var(--ink);font-weight:600}
+@media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero{padding-top:44px}}
+
+section{padding-block:76px}
+.alt{background:var(--bg2);border-block:1px solid var(--line)}
+.head{max-width:720px;margin-bottom:36px}
+.head p{color:var(--muted);margin:14px 0 0}
+
+/* video */
+.video{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#000;aspect-ratio:16/9;max-width:100%}
+.video video{width:100%;height:100%}
+
+/* funciones */
+.feats{display:grid;gap:56px}
+.feat{display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:center}
+.feat:nth-child(even){grid-template-columns:1.4fr 1fr}
+.feat:nth-child(even) .txt{order:2}
+.feat .txt{min-width:0}
+.feat ul{margin:14px 0 0;padding-left:20px;color:var(--muted)}
+.feat li{margin:4px 0}
+.tag{display:inline-block;font:600 12px/1 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:6px 10px;margin-bottom:12px}
+@media (max-width:820px){.feat,.feat:nth-child(even){grid-template-columns:1fr}.feat:nth-child(even) .txt{order:0}}
+
+/* más funciones */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.cell{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+.cell h3{font-size:20px;margin-bottom:6px}
+.cell p{margin:0;color:var(--muted);font-size:15.5px}
+
+/* planes */
+.plans{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px;border-top:4px solid var(--accent)}
+.plan.edu{border-top-color:var(--edu)}
+.plan h3{font-size:30px}
+.plan .who{color:var(--muted);margin:6px 0 16px}
+.plan ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+.plan li{padding-left:28px;position:relative}
+.plan li::before{content:"";position:absolute;left:2px;top:.45em;width:14px;height:8px;border-left:2.5px solid var(--accent);border-bottom:2.5px solid var(--accent);transform:rotate(-45deg)}
+.plan.edu li::before{border-color:var(--edu)}
+.plan .sub{margin-top:18px;padding-top:16px;border-top:1px dashed var(--line);color:var(--muted);font-size:15.5px}
+.note{margin-top:20px;color:var(--muted);font-size:15.5px}
+@media (max-width:820px){.plans{grid-template-columns:1fr}}
+
+/* requisitos y preguntas */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+@media (max-width:820px){.two{grid-template-columns:1fr}}
+dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:10px 18px}
+dt{color:var(--muted)}dd{margin:0}
+details{border-bottom:1px solid var(--line);padding:14px 0}
+summary{cursor:pointer;font-weight:600;list-style:none}summary::-webkit-details-marker{display:none}
+summary::before{content:"+";display:inline-block;width:22px;color:var(--accent);font-weight:700}
+details[open] summary::before{content:"–"}
+details p{margin:8px 0 0 22px;color:var(--muted)}
+
+/* contacto */
+.cta{text-align:center}
+.cta .box{max-width:760px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:40px 28px}
+.cta p{color:var(--muted);margin:14px auto 24px;max-width:52ch}
+.mail{font:600 20px var(--sans);user-select:all}
+
+footer{padding-block:36px;color:var(--muted);font-size:14.5px;border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="index.html" aria-label="Tablerix, inicio"><img src="img/logo.svg" alt=""><b>Tabler<em>ix</em></b></a>
+</div></header>
+<main>
+<section class="hero">
+  <div class="wrap" style="grid-template-columns:1fr">
+    <div>
+      <p class="eyebrow">Activación</p>
+      <h1>Activa <em>Tablerix Pro</em> en 5 pasos</h1>
+      <p class="lead">Guarda esta página. Aquí están los pasos para activar tu licencia. Tu código de activación y tu clave de acceso llegarán por correo en un plazo máximo de 24 horas hábiles.</p>
+      <ol class="pasos" style="padding-left:20px;display:grid;gap:14px;margin:28px 0 0">
+        <li><b>Instala Tablerix.</b> Descarga el instalador y ejecútalo en tu computador con Windows.</li>
+        <li><b>Copia el «ID de este equipo».</b> Aparece en la pantalla de activación que se abre al instalar.</li>
+        <li><b>Envía tu ID por correo</b> a <span style="user-select:all">diego.fauoporto@gmail.com</span> con el asunto «Activación Tablerix Pro» y tu nombre.</li>
+        <li><b>Espera tu código y tu clave.</b> Llegarán por correo en un plazo máximo de 24 horas hábiles. Cada licencia se genera para tu equipo.</li>
+        <li><b>Activa el programa.</b> Pega el código en la pantalla de activación junto con la clave. La clave se pide una sola vez en cada equipo.</li>
+      </ol>
+      <div class="actions" style="margin-top:28px">
+        <a class="btn pri" href="https://github.com/SimulixGroup/Tablerix-descargas/releases/download/v1.21.0/Tablerix-Instalador-1.21.0.exe" rel="noopener">Descargar Tablerix (instalador)</a>
+        <a class="btn sec" href="index.html">Volver al inicio</a>
+      </div>
+      <p class="note" style="margin-top:20px">La licencia es anual, desde la fecha de activación, y queda asociada al ID que nos envíes.</p>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap">
+  <span>© 2026 Tablerix. Todos los derechos reservados.</span>
+  <span>Versión BETA: en desarrollo y en actualización permanente.</span>
+</div></footer>
+</body>
+</html>
