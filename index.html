@@ -59,6 +59,30 @@ h3{font-size:22px;letter-spacing:.01em}
 .facts b{color:var(--ink);font-weight:600}
 @media (max-width:900px){.hero .wrap{grid-template-columns:1fr}.hero{padding-top:44px}}
 
+/* carrusel de portada */
+.car{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 60px rgba(0,0,0,.45);background:var(--bg2);aspect-ratio:5/3}
+.car-track{display:flex;height:100%;transition:transform .7s cubic-bezier(.65,0,.35,1)}
+.car-slide{flex:0 0 100%;position:relative;margin:0;height:100%}
+.car-slide img{width:100%;height:100%;object-fit:cover;object-position:center}
+.car-slide figcaption{position:absolute;left:14px;bottom:14px;right:14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;opacity:0;transform:translateY(10px);transition:opacity .5s .35s,transform .5s .35s}
+.car-slide.on figcaption{opacity:1;transform:none}
+.car-slide figcaption b{background:rgba(15,18,20,.86);color:#eef0f1;font:600 15px/1.3 var(--sans);padding:8px 12px;border-radius:8px;backdrop-filter:blur(6px)}
+.car-slide figcaption span{background:var(--accent);color:var(--accent-ink);font:700 12px/1 var(--cond);letter-spacing:.08em;text-transform:uppercase;padding:7px 8px;border-radius:6px}
+.car-btn{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(15,18,20,.7);color:#fff;font:600 20px/1 var(--sans);cursor:pointer;opacity:0;transition:opacity .25s}
+.car:hover .car-btn,.car-btn:focus-visible{opacity:1}
+.car-prev{left:10px}.car-next{right:10px}
+.car-dots{position:absolute;top:12px;right:12px;display:flex;gap:6px}
+.car-dots button{width:8px;height:8px;padding:0;border-radius:99px;border:0;background:rgba(255,255,255,.45);cursor:pointer;transition:width .3s,background .3s}
+.car-dots button[aria-current="true"]{width:22px;background:var(--accent)}
+.car-bar{position:absolute;left:0;bottom:0;height:3px;background:var(--accent);width:0}
+.car.run .car-bar{animation:carbar var(--car-t,5s) linear}
+@keyframes carbar{from{width:0}to{width:100%}}
+@media (hover:none){.car-btn{opacity:.85}}
+@media (max-width:480px){.car-slide figcaption b{font-size:13px;padding:6px 9px}}
+/* aparición suave al bajar */
+.js .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.car-track,.car-slide figcaption,.js .reveal{transition:none}.js .reveal{opacity:1;transform:none}.car.run .car-bar{animation:none}}
 section{padding-block:76px}
 .alt{background:var(--bg2);border-block:1px solid var(--line)}
 .head{max-width:720px;margin-bottom:36px}
@@ -138,6 +162,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
   <div class="wrap">
     <div>
       <div class="beta"><span>BETA</span>Versión BETA · En desarrollo</div>
+      <p style="margin:-8px 0 18px"><a href="#novedades" style="font-weight:600;text-decoration:none">Nuevo en la versión 1.23: relés inteligentes, PT100, FV y empalmes →</a></p>
       <h1>Diseña, cablea y simula tableros eléctricos <em>a escala real</em>.</h1>
       <p class="lead">Arma el tablero pieza por pieza, peina los cables por las canaletas y prueba el PLC con sensores y motores antes de tocar un solo cable.</p>
       <div class="actions">
@@ -146,7 +171,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
       </div>
       <div class="facts"><span><b>DS N°8</b> y pliegos RIC</span><span><b>Escala 1:1</b> en mm</span><span><b>Windows</b> · funciona sin internet</span></div>
     </div>
-    <figure class="shot" style="margin:0"><img src="img/tablero.jpg" width="1600" height="960" alt="Tablero eléctrico armado en Tablerix: placa con rieles DIN, protecciones, canaletas y puerta con pulsadores."></figure>
+    <div class="car" id="car" role="region" aria-roledescription="carrusel" aria-label="Novedades de Tablerix"><div class="car-track"><figure class="car-slide on" aria-roledescription="diapositiva" aria-label="1 de 7"><img src="img/tablero.jpg" width="1600" height="960" alt="Tablero eléctrico armado en Tablerix: placa con rieles DIN, protecciones, canaletas y puerta con pulsadores."><figcaption><b>Tablero armado a escala real, con canaletas y puerta</b></figcaption></figure><figure class="car-slide" aria-roledescription="diapositiva" aria-label="2 de 7"><img src="img/nov-rele-inteligente.jpg" width="1600" height="960" loading="lazy" alt="Relé inteligente de 16 entradas y 10 salidas montado en el riel."><figcaption><span>Nuevo 1.23</span><b>Relés inteligentes de 6 y 16 entradas</b></figcaption></figure><figure class="car-slide" aria-roledescription="diapositiva" aria-label="3 de 7"><img src="img/nov-empalme.jpg" width="1600" height="960" loading="lazy" alt="Caja de empalme monofásico con medidor, automático y borne de tierra de bronce."><figcaption><span>Nuevo 1.23</span><b>Empalme monofásico: caja, medidor y automático</b></figcaption></figure><figure class="car-slide" aria-roledescription="diapositiva" aria-label="4 de 7"><img src="img/nov-empalme-acometida.jpg" width="1600" height="960" loading="lazy" alt="Acometida con cable concéntrico que entra a la mufa y baja por el conduit."><figcaption><span>Nuevo 1.23</span><b>Acometida, mufa y caja de derivación</b></figcaption></figure><figure class="car-slide" aria-roledescription="diapositiva" aria-label="5 de 7"><img src="img/nov-temperatura.jpg" width="1600" height="960" loading="lazy" alt="Tablero con relé inteligente y programa en escalera para controlar un ventilador por temperatura."><figcaption><span>Nuevo 1.23</span><b>Control por temperatura con PT100</b></figcaption></figure><figure class="car-slide" aria-roledescription="diapositiva" aria-label="6 de 7"><img src="img/nov-empalme-tierra.jpg" width="1600" height="960" loading="lazy" alt="Conductor de tierra que baja por el conduit hasta la barra de tierra en la camarilla."><figcaption><span>Nuevo 1.23</span><b>Puesta a tierra hasta la camarilla</b></figcaption></figure><figure class="car-slide" aria-roledescription="diapositiva" aria-label="7 de 7"><img src="img/nov-fotovoltaico.jpg" width="1600" height="960" loading="lazy" alt="Tablero fotovoltaico con inversor híbrido y enchufes industriales."><figcaption><span>Nuevo 1.23</span><b>Sistema fotovoltaico con inversor y batería</b></figcaption></figure></div><button class="car-btn car-prev" type="button" aria-label="Anterior">‹</button><button class="car-btn car-next" type="button" aria-label="Siguiente">›</button><div class="car-dots"></div><div class="car-bar"></div></div>
   </div>
 </section>
 
@@ -327,5 +352,21 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
   </div>
 </footer>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "87e76e8c9acd448b93ea783cd3ab0c1a"}'></script><!-- End Cloudflare Web Analytics -->
+<script>
+document.documentElement.classList.add('js');
+(()=>{const C=document.getElementById('car');if(!C)return;const T=C.querySelector('.car-track'),S=[...C.querySelectorAll('.car-slide')],D=C.querySelector('.car-dots'),B=C.querySelector('.car-bar');
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches,MS=5000;let i=0,tm=null,paused=false;C.style.setProperty('--car-t',MS+'ms');
+S.forEach((s,k)=>{const b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Ver diapositiva '+(k+1));b.onclick=()=>{go(k);restart()};D.appendChild(b)});
+const dots=[...D.children];
+function go(k){i=(k+S.length)%S.length;T.style.transform='translateX('+(-100*i)+'%)';S.forEach((s,n)=>{s.classList.toggle('on',n===i);s.setAttribute('aria-hidden',n!==i)});dots.forEach((d,n)=>d.setAttribute('aria-current',n===i))}
+function restart(){clearTimeout(tm);C.classList.remove('run');if(RM||paused)return;void B.offsetWidth;C.classList.add('run');tm=setTimeout(()=>{go(i+1);restart()},MS)}
+C.querySelector('.car-prev').onclick=()=>{go(i-1);restart()};C.querySelector('.car-next').onclick=()=>{go(i+1);restart()};
+const pause=v=>{paused=v;restart()};C.addEventListener('mouseenter',()=>pause(true));C.addEventListener('mouseleave',()=>pause(false));C.addEventListener('focusin',()=>pause(true));C.addEventListener('focusout',()=>pause(false));
+document.addEventListener('visibilitychange',()=>pause(document.hidden));
+let x0=null;C.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});C.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40){go(i+(dx<0?1:-1));restart()}x0=null});
+go(0);restart()})();
+(()=>{const els=document.querySelectorAll('.feat,.nov,.cell,.plan,.head');els.forEach(e=>e.classList.add('reveal'));if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return}
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});els.forEach(e=>io.observe(e))})();
+</script>
 </body>
 </html>
