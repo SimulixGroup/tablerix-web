@@ -83,6 +83,28 @@ h3{font-size:22px;letter-spacing:.01em}
 .js .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
 .js .reveal.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.car-track,.car-slide figcaption,.js .reveal{transition:none}.js .reveal{opacity:1;transform:none}.car.run .car-bar{animation:none}}
+/* cinta de versión */
+.tick{background:var(--accent);color:var(--accent-ink);overflow:hidden;white-space:nowrap;border-top:1px solid rgba(0,0,0,.15)}
+.tick a{color:inherit;text-decoration:none;display:block}
+.tick-in{display:inline-flex;animation:tick 38s linear infinite}
+.tick:hover .tick-in{animation-play-state:paused}
+.tick-in span{display:inline-flex;align-items:center;gap:10px;padding:7px 0;font:600 14px/1.2 var(--sans)}
+.tick-in span::after{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.55;margin:0 22px}
+.tick-in b{font:700 13px/1 var(--cond);letter-spacing:.08em;text-transform:uppercase;background:var(--accent-ink);color:var(--accent);padding:4px 7px;border-radius:5px}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+/* portada con plano milimetrado en movimiento */
+.hero{position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:-40px;background-image:linear-gradient(rgba(240,168,38,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(240,168,38,.07) 1px,transparent 1px);background-size:40px 40px;mask-image:radial-gradient(900px 500px at 70% 40%,#000,transparent 75%);-webkit-mask-image:radial-gradient(900px 500px at 70% 40%,#000,transparent 75%);animation:grid 18s linear infinite;pointer-events:none}
+.hero .wrap{position:relative}
+@keyframes grid{to{transform:translate(40px,40px)}}
+/* acercamiento lento de la imagen activa */
+.car-slide img{transform:scale(1);transition:transform 6s ease-out}
+.car-slide.on img{transform:scale(1.06)}
+/* botón comprar con brillo */
+.hero .btn.pri{position:relative;overflow:hidden}
+.hero .btn.pri::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:shine 4.5s ease-in-out infinite}
+@keyframes shine{0%,70%{left:-60%}100%{left:130%}}
+@media (prefers-reduced-motion:reduce){.tick-in,.hero::before,.hero .btn.pri::after{animation:none}.car-slide img,.car-slide.on img{transition:none;transform:none}.tick-in{white-space:normal}}
 section{padding-block:76px}
 .alt{background:var(--bg2);border-block:1px solid var(--line)}
 .head{max-width:720px;margin-bottom:36px}
@@ -155,6 +177,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
       <a href="#novedades">Novedades</a><a href="#funciones">Funciones</a><a href="#comprar">Comprar</a><a href="#versiones">Versiones</a><a href="#requisitos">Requisitos</a><a href="#preguntas">Preguntas</a>
     </nav>
     </div>
+<div class="tick" aria-label="Tablerix 1.23.0 ya está disponible"><a href="#novedades"><div class="tick-in" aria-hidden="true"><span><b>Disponible</b>Tablerix 1.23.0 ya está disponible</span><span>Relés inteligentes de 6 y 16 entradas</span><span>Control de temperatura con PT100 y transmisor 0-10 V</span><span>Empalme monofásico armado en fachada</span><span>Sistema fotovoltaico con inversor y batería</span><span>Sección del conductor recomendada según la protección</span><span>Cotización sin marcas comerciales</span><span>Actualiza desde Ayuda › Buscar actualizaciones</span><span><b>Disponible</b>Tablerix 1.23.0 ya está disponible</span><span>Relés inteligentes de 6 y 16 entradas</span><span>Control de temperatura con PT100 y transmisor 0-10 V</span><span>Empalme monofásico armado en fachada</span><span>Sistema fotovoltaico con inversor y batería</span><span>Sección del conductor recomendada según la protección</span><span>Cotización sin marcas comerciales</span><span>Actualiza desde Ayuda › Buscar actualizaciones</span></div></a></div>
 </header>
 
 <main id="inicio">
