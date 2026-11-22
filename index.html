@@ -84,6 +84,8 @@ section{padding-block:76px}
 .cell{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
 .cell h3{font-size:20px;margin-bottom:6px}
 .cell p{margin:0;color:var(--muted);font-size:15.5px}
+.novs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}.nov{margin:0}.nov .shot{margin:0 0 14px}.nov img{display:block;width:100%;height:auto}.nov h3{font-size:20px;margin:0 0 6px}.nov p{margin:0;color:var(--muted);font-size:15.5px}.novlist{margin:36px 0 0;padding-left:20px;color:var(--muted);columns:2;column-gap:40px}.novlist li{margin:4px 0;break-inside:avoid}
+@media (max-width:820px){.novs{grid-template-columns:1fr}.novlist{columns:1}}
 
 /* planes */
 .plans{display:grid;grid-template-columns:1fr 1fr;gap:20px}
@@ -126,7 +128,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
   <div class="wrap">
     <a class="brand" href="#inicio" aria-label="Tablerix, inicio"><img src="img/logo.svg" alt=""><b>Tabler<em>ix</em></b></a>
     <nav class="nav" aria-label="Secciones">
-      <a href="#funciones">Funciones</a><a href="#comprar">Comprar</a><a href="#versiones">Versiones</a><a href="#requisitos">Requisitos</a><a href="#preguntas">Preguntas</a>
+      <a href="#novedades">Novedades</a><a href="#funciones">Funciones</a><a href="#comprar">Comprar</a><a href="#versiones">Versiones</a><a href="#requisitos">Requisitos</a><a href="#preguntas">Preguntas</a>
     </nav>
     </div>
 </header>
@@ -145,6 +147,28 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
       <div class="facts"><span><b>DS N°8</b> y pliegos RIC</span><span><b>Escala 1:1</b> en mm</span><span><b>Windows</b> · funciona sin internet</span></div>
     </div>
     <figure class="shot" style="margin:0"><img src="img/tablero.jpg" width="1600" height="960" alt="Tablero eléctrico armado en Tablerix: placa con rieles DIN, protecciones, canaletas y puerta con pulsadores."></figure>
+  </div>
+</section>
+
+<section id="novedades">
+  <div class="wrap">
+    <div class="head"><p class="eyebrow">Nuevo en la versión 1.23</p><h2>Relés inteligentes, temperatura, energía solar y empalmes más reales</h2><p>Si ya tienes Tablerix, actualiza desde Ayuda › Buscar actualizaciones. Tus proyectos y tu licencia se conservan.</p></div>
+    <div class="novs">
+      <figure class="nov"><div class="shot"><img src="img/nov-rele-inteligente.jpg" width="1600" height="960" loading="lazy" alt="Relé inteligente de 16 entradas y 10 salidas montado en el riel, con sus bornes y pantalla en Tablerix."></div><figcaption><h3>Relés inteligentes nuevos</h3><p>Modelos de 6 y 16 entradas, con salidas a relé o transistor, y relé lógico de 230 V AC. Ilustraciones nuevas, con cada borne en su lugar.</p></figcaption></figure>
+      <figure class="nov"><div class="shot"><img src="img/nov-temperatura.jpg" width="1600" height="960" loading="lazy" alt="Ejemplo de ventilador controlado por temperatura: tablero con relé inteligente, guardamotor, contactor y programa en escalera."></div><figcaption><h3>Control por temperatura con PT100</h3><p>Sonda PT100 de 3 hilos, transmisor 0-10 V, entradas analógicas y comparador en escalera. Incluye un ejemplo resuelto de ventilador por temperatura.</p></figcaption></figure>
+      <figure class="nov"><div class="shot"><img src="img/nov-empalme.jpg" width="1600" height="960" loading="lazy" alt="Caja de empalme monofásico con medidor, automático, borne de tierra de bronce y conductores con curvas reales."></div><figcaption><h3>Empalme monofásico más real</h3><p>Conductores con curvas que no pasan sobre el medidor, concéntrico con su cubierta hasta el medidor, borne de tierra de bronce y terminal de ojo.</p></figcaption></figure>
+      <figure class="nov"><div class="shot"><img src="img/nov-fotovoltaico.jpg" width="1600" height="960" loading="lazy" alt="Tablero fotovoltaico con inversor híbrido, protecciones en tres rieles y enchufes industriales al costado."></div><figcaption><h3>Sistema fotovoltaico en dos tableros</h3><p>Ejemplo con inversor híbrido y batería, conduit flexible con llenado según RIC N°04, enchufe industrial y diferenciales de hasta 63 A.</p></figcaption></figure>
+    </div>
+    <ul class="novlist">
+      <li>Recomendación de sección del conductor según la protección, con botón para corregir.</li>
+      <li>Cables dibujados con su grosor real según la sección.</li>
+      <li>Cotización (PDF y CSV) sin marcas comerciales.</li>
+      <li>Fuentes de 24 V nuevas, de 75 W y de 1 A con DC OK.</li>
+      <li>Tablero plástico de 24 polos, luz piloto DIN, selector 1-0-2 y cajas estancas.</li>
+      <li>Perno de tierra en el gabinete y la puerta de los tableros metálicos.</li>
+      <li>Caja de derivación a la salida del empalme.</li>
+      <li>Nueva ilustración de la cinta transportadora.</li>
+    </ul>
   </div>
 </section>
 
@@ -186,14 +210,14 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
       </article>
       <article class="feat">
         <div class="txt"><span class="tag">Presupuesto</span><h3>Lista de materiales lista para cotizar</h3>
-          <ul><li>Se arma sola con lo que hay en el tablero y los metros de cable.</li><li>Marca, modelo y precio unitario por ítem, con IVA.</li><li>Exporta PDF, dossier HTML o planilla CSV.</li></ul></div>
+          <ul><li>Se arma sola con lo que hay en el tablero y los metros de cable.</li><li>Descripción técnica sin marcas comerciales y precio unitario por ítem, con IVA.</li><li>Exporta PDF, dossier HTML o planilla CSV.</li></ul></div>
         <figure class="shot" style="margin:0"><img src="img/materiales.jpg" width="1600" height="960" alt="Lista de materiales y presupuesto de Tablerix."></figure>
       </article>
     </div>
 
     <div class="grid" style="margin-top:56px">
       <div class="cell"><h3>Buscador de componentes</h3><p>Encuentra cualquier equipo con Ctrl+K, aunque lo escribas con errores.</p></div>
-      <div class="cell"><h3>8 modelos de PLC</h3><p>Modelos de referencia de varias marcas, como Siemens, Schneider, Mitsubishi, Omron y Allen-Bradley.</p></div>
+      <div class="cell"><h3>12 modelos de PLC</h3><p>PLC y relés inteligentes de referencia de varias marcas, como Siemens, Schneider, Mitsubishi, Omron y Allen-Bradley.</p></div>
       <div class="cell"><h3>Corrientes reales</h3><p>Multímetro y pinza, disparos térmicos y magnéticos, selectividad entre protecciones.</p></div>
       <div class="cell"><h3>Revisión DS N°8 y RIC</h3><p>Avisos de secciones, colores, puesta a tierra y protecciones mientras armas.</p></div>
       <div class="cell"><h3>Proyectos en archivo</h3><p>Guarda cada tablero como archivo .tablerix y ábrelo con doble clic.</p></div>
