@@ -105,6 +105,23 @@ h3{font-size:22px;letter-spacing:.01em}
 .hero .btn.pri::after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:shine 4.5s ease-in-out infinite}
 @keyframes shine{0%,70%{left:-60%}100%{left:130%}}
 @media (prefers-reduced-motion:reduce){.tick-in,.hero::before,.hero .btn.pri::after{animation:none}.car-slide img,.car-slide.on img{transition:none;transform:none}.tick-in{white-space:normal}}
+/* sorteo */
+.sorteo{background:linear-gradient(135deg,rgba(240,168,38,.16),rgba(232,101,46,.10));border-block:1px solid var(--line)}
+.sorteo .wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.sorteo h2 em{font-style:normal;color:var(--accent)}
+.sorteo ol{margin:16px 0 0;padding-left:22px;color:var(--muted)}.sorteo ol li{margin:6px 0}.sorteo ol b{color:var(--ink)}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 20px}
+.cd div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 6px;text-align:center}
+.cd b{display:block;font:700 clamp(30px,4vw,44px)/1 var(--cond);color:var(--accent);font-variant-numeric:tabular-nums}
+.cd span{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.sorteo .box2{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:24px}
+.sorteo .btn.pri{width:100%;justify-content:center;font-size:18px;padding:15px 20px}
+.sorteo .btn[aria-disabled="true"]{opacity:.55;pointer-events:none}
+.sorteo .small{font-size:14px;color:var(--muted);margin:12px 0 0;text-align:center}
+.ganadores{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.ganadores li{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-weight:600}
+.ganadores li::before{content:"🏆 ";}
+@media (max-width:900px){.sorteo .wrap{grid-template-columns:1fr}}
 section{padding-block:76px}
 .alt{background:var(--bg2);border-block:1px solid var(--line)}
 .head{max-width:720px;margin-bottom:36px}
@@ -174,10 +191,10 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
   <div class="wrap">
     <a class="brand" href="#inicio" aria-label="Tablerix, inicio"><img src="img/logo.svg" alt=""><b>Tabler<em>ix</em></b></a>
     <nav class="nav" aria-label="Secciones">
-      <a href="#novedades">Novedades</a><a href="#funciones">Funciones</a><a href="#comprar">Comprar</a><a href="#versiones">Versiones</a><a href="#requisitos">Requisitos</a><a href="#preguntas">Preguntas</a>
+      <a href="#sorteo">Sorteo</a><a href="#novedades">Novedades</a><a href="#funciones">Funciones</a><a href="#comprar">Comprar</a><a href="#versiones">Versiones</a><a href="#requisitos">Requisitos</a><a href="#preguntas">Preguntas</a>
     </nav>
     </div>
-<div class="tick" aria-label="Tablerix 1.23.0 ya está disponible"><a href="#novedades"><div class="tick-in" aria-hidden="true"><span><b>Disponible</b>Tablerix 1.23.0 ya está disponible</span><span>Relés inteligentes de 6 y 16 entradas</span><span>Control de temperatura con PT100 y transmisor 0-10 V</span><span>Empalme monofásico armado en fachada</span><span>Sistema fotovoltaico con inversor y batería</span><span>Sección del conductor recomendada según la protección</span><span>Cotización sin marcas comerciales</span><span>Actualiza desde Ayuda › Buscar actualizaciones</span><span><b>Disponible</b>Tablerix 1.23.0 ya está disponible</span><span>Relés inteligentes de 6 y 16 entradas</span><span>Control de temperatura con PT100 y transmisor 0-10 V</span><span>Empalme monofásico armado en fachada</span><span>Sistema fotovoltaico con inversor y batería</span><span>Sección del conductor recomendada según la protección</span><span>Cotización sin marcas comerciales</span><span>Actualiza desde Ayuda › Buscar actualizaciones</span></div></a></div>
+<div class="tick" aria-label="Tablerix 1.23.0 ya está disponible"><a href="#novedades"><div class="tick-in" aria-hidden="true"><span><b>Disponible</b>Tablerix 1.23.0 ya está disponible</span><span><b>Sorteo</b>Gana 1 semana de Tablerix Pro · hasta el lunes 30 de noviembre</span><span>Relés inteligentes de 6 y 16 entradas</span><span>Control de temperatura con PT100 y transmisor 0-10 V</span><span>Empalme monofásico armado en fachada</span><span>Sistema fotovoltaico con inversor y batería</span><span>Sección del conductor recomendada según la protección</span><span>Cotización sin marcas comerciales</span><span>Actualiza desde Ayuda › Buscar actualizaciones</span><span><b>Disponible</b>Tablerix 1.23.0 ya está disponible</span><span><b>Sorteo</b>Gana 1 semana de Tablerix Pro · hasta el lunes 30 de noviembre</span><span>Relés inteligentes de 6 y 16 entradas</span><span>Control de temperatura con PT100 y transmisor 0-10 V</span><span>Empalme monofásico armado en fachada</span><span>Sistema fotovoltaico con inversor y batería</span><span>Sección del conductor recomendada según la protección</span><span>Cotización sin marcas comerciales</span><span>Actualiza desde Ayuda › Buscar actualizaciones</span></div></a></div>
 </header>
 
 <main id="inicio">
@@ -195,6 +212,28 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-bet
       <div class="facts"><span><b>DS N°8</b> y pliegos RIC</span><span><b>Escala 1:1</b> en mm</span><span><b>Windows</b> · funciona sin internet</span></div>
     </div>
     <div class="car" id="car" role="region" aria-roledescription="carrusel" aria-label="Novedades de Tablerix"><div class="car-track"><figure class="car-slide on" aria-roledescription="diapositiva" aria-label="1 de 7"><img src="img/tablero.jpg" width="1600" height="960" alt="Tablero eléctrico armado en Tablerix: placa con rieles DIN, protecciones, canaletas y puerta con pulsadores."><figcaption><b>Tablero armado a escala real, con canaletas y puerta</b></figcaption></figure><figure class="car-slide" aria-roledescription="diapositiva" aria-label="2 de 7"><img src="img/nov-rele-inteligente.jpg" width="1600" height="960" loading="lazy" alt="Relé inteligente de 16 entradas y 10 salidas montado en el riel."><figcaption><span>Nuevo 1.23</span><b>Relés inteligentes de 6 y 16 entradas</b></figcaption></figure><figure class="car-slide" aria-roledescription="diapositiva" aria-label="3 de 7"><img src="img/nov-empalme.jpg" width="1600" height="960" loading="lazy" alt="Caja de empalme monofásico con medidor, automático y borne de tierra de bronce."><figcaption><span>Nuevo 1.23</span><b>Empalme monofásico: caja, medidor y automático</b></figcaption></figure><figure class="car-slide" aria-roledescription="diapositiva" aria-label="4 de 7"><img src="img/nov-empalme-acometida.jpg" width="1600" height="960" loading="lazy" alt="Acometida con cable concéntrico que entra a la mufa y baja por el conduit."><figcaption><span>Nuevo 1.23</span><b>Acometida, mufa y caja de derivación</b></figcaption></figure><figure class="car-slide" aria-roledescription="diapositiva" aria-label="5 de 7"><img src="img/nov-temperatura.jpg" width="1600" height="960" loading="lazy" alt="Tablero con relé inteligente y programa en escalera para controlar un ventilador por temperatura."><figcaption><span>Nuevo 1.23</span><b>Control por temperatura con PT100</b></figcaption></figure><figure class="car-slide" aria-roledescription="diapositiva" aria-label="6 de 7"><img src="img/nov-empalme-tierra.jpg" width="1600" height="960" loading="lazy" alt="Conductor de tierra que baja por el conduit hasta la barra de tierra en la camarilla."><figcaption><span>Nuevo 1.23</span><b>Puesta a tierra hasta la camarilla</b></figcaption></figure><figure class="car-slide" aria-roledescription="diapositiva" aria-label="7 de 7"><img src="img/nov-fotovoltaico.jpg" width="1600" height="960" loading="lazy" alt="Tablero fotovoltaico con inversor híbrido y enchufes industriales."><figcaption><span>Nuevo 1.23</span><b>Sistema fotovoltaico con inversor y batería</b></figcaption></figure></div><button class="car-btn car-prev" type="button" aria-label="Anterior">‹</button><button class="car-btn car-next" type="button" aria-label="Siguiente">›</button><div class="car-dots"></div><div class="car-bar"></div></div>
+  </div>
+</section>
+
+<section id="sorteo" class="sorteo">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Sorteo</p>
+      <h2>Gana <em>1 semana de Tablerix Pro</em></h2>
+      <p class="muted" style="margin:14px 0 0">Sorteamos 3 licencias de Tablerix Pro por 7 días. Inscríbete hasta el lunes 30 de noviembre a las 23:59. Los ganadores se publican aquí mismo el martes 1 de diciembre.</p>
+      <ol>
+        <li><b>Sigue a Tablerix en TikTok</b> (<a class="tt" href="https://www.tiktok.com/@simuladortablerix" target="_blank" rel="noopener">@simuladortablerix</a>).</li>
+        <li><b>Inscríbete en el formulario</b> con tu nombre, correo, WhatsApp y usuario de TikTok.</li>
+        <li><b>Espera el sorteo.</b> Una inscripción por persona. Necesitas un computador con Windows.</li>
+      </ol>
+      <p style="margin:16px 0 0"><a href="sorteo.html">Leer las bases del sorteo</a></p>
+    </div>
+    <div class="box2" id="sorteo-box">
+      <div class="cd" id="cd" aria-live="off"><div><b id="cd-d">0</b><span>días</span></div><div><b id="cd-h">00</b><span>horas</span></div><div><b id="cd-m">00</b><span>min</span></div><div><b id="cd-s">00</b><span>seg</span></div></div>
+      <a class="btn pri" id="sorteo-btn" href="__FORM__" target="_blank" rel="noopener">Participar en el sorteo</a>
+      <p class="small" id="sorteo-note">Inscripciones abiertas hasta el lunes 30 de noviembre, 23:59 (hora de Chile).</p>
+      <div id="ganadores" hidden><h3 style="margin:0 0 12px">Ganadores</h3><ul class="ganadores" id="ganadores-lista"></ul><p class="small">Los contactamos por correo o WhatsApp para entregar su licencia.</p></div>
+    </div>
   </div>
 </section>
 
@@ -390,6 +429,17 @@ let x0=null;C.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passiv
 go(0);restart()})();
 (()=>{const els=document.querySelectorAll('.feat,.nov,.cell,.plan,.head');els.forEach(e=>e.classList.add('reveal'));if(!('IntersectionObserver' in window)){els.forEach(e=>e.classList.add('in'));return}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -8% 0px'});els.forEach(e=>io.observe(e))})();
+</script>
+<script>
+(()=>{/* Sorteo: completar FORM y GANADORES */
+const FIN=new Date('2026-12-01T02:59:59Z'),FORM=document.getElementById('sorteo-btn').getAttribute('href'),GANADORES=[];
+const $=i=>document.getElementById(i),btn=$('sorteo-btn'),note=$('sorteo-note');
+if(GANADORES.length){$('cd').hidden=true;btn.hidden=true;note.hidden=true;$('ganadores').hidden=false;$('ganadores-lista').innerHTML=GANADORES.map(g=>'<li>'+g+'</li>').join('');return}
+if(!/^https:/.test(FORM)){btn.setAttribute('aria-disabled','true');btn.removeAttribute('href');btn.textContent='Inscripciones muy pronto'}
+const p=n=>String(n).padStart(2,'0');
+function tick(){const ms=FIN-Date.now();if(ms<=0){$('cd').hidden=true;btn.setAttribute('aria-disabled','true');btn.removeAttribute('href');btn.textContent='Inscripciones cerradas';note.textContent='El sorteo se realiza el martes 1 de diciembre. Los ganadores aparecerán aquí.';return}
+const s=Math.floor(ms/1000);$('cd-d').textContent=Math.floor(s/86400);$('cd-h').textContent=p(Math.floor(s%86400/3600));$('cd-m').textContent=p(Math.floor(s%3600/60));$('cd-s').textContent=p(s%60);setTimeout(tick,1000)}
+tick()})();
 </script>
 </body>
 </html>
